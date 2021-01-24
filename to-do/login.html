@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        const users = [
+            {
+                name: 'Scooby',
+                password: 'Scooby@321'
+            }
+                ];
+        let auth = true;
+        while (auth) {
+            let name = prompt("Enter your name : ");
+            let password = prompt("Enter your password : ");
+            for ( const user of users ) {
+                if ( name === user['name'] && password === user['password']){
+                    // console.log(user);
+                    localStorage.setItem('login', 'true');
+                    window.location = 'todo.html';
+                }
+            }
+            alert('Wrong username or password.');
+        }
+    </script>
+</body>
+</html>

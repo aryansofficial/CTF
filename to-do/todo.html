@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #ff5100c7;
+        }
+        .card-body{
+            width: 90vw;
+            max-width: 1000px;
+            background: #fff;
+            margin:auto;
+            margin-top: 3rem;
+            font-family: sans-serif;
+            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.11);
+            padding: 4rem;
+            /* margin-bottom: rem; */
+        }
+        .card-container {
+            height: 100vh;
+        }
+        #card-head {
+            color: #4f4f4f;
+            font-size: 2rem;
+            line-height: 60px;
+            margin-bottom: 2.5rem;
+            font-weight: 100;
+        }
+        #card-head::after {
+            content:'';
+            display:block;
+            height: 2px;
+            width: 40%;
+            position: absolute;
+            background:  linear-gradient(90deg,#ff5200,#fff);
+        }
+        #card-new-task {
+            color:#5d686d;
+        }
+        #input-wrap {
+            margin-top: 1rem;
+        }
+        input[type=text] {
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border:none;
+            border-bottom: 2px solid #ff5200;
+            min-width: 40%;
+            color: grey;
+            padding: 0.2rem;
+            /* border-radius: 5px; */
+            text-align:center;
+            transition: background 0.3s;
+        }
+        input[type=text]:focus {
+            outline:none;
+            background: #f4f4f4;
+        }
+        input[type=submit]{
+            padding: 0.4rem;
+            border:none;
+            font-size: 1.1rem;
+            background:#ff5200;
+            color:#fff;
+            padding: 0.5rem 0.7rem;
+            border-radius: 5px;
+            line-height: 1.1rem;
+        }
+        #card-curr-task {
+            margin-top: 3rem;
+        }
+        #curr-task-submit {
+            background:black;
+        }
+        input[type=submit]:hover{
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        ul{
+            list-style: none;
+            /* border: 1px solid red; */
+            margin: 1rem;
+        }
+        li.item{
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid #ccc;
+            max-width: 30rem;
+        }
+        li.item a{
+            color:red;
+        }
+        #logout-section {
+            margin-top: 3rem;
+            clear: both;
+
+        }
+        #logout-section #test{
+            float:left;
+        }
+        #logout-section #test button {
+            border:none;
+            font-size: 1.1rem;
+            background:#ff5200;
+            color:#fff;
+            padding: 0.5rem 0.7rem;
+            border-radius: 5px;
+            line-height: 1.3rem;
+            /*font-weight: 200;*/
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card-body">
+            <!-- card head -->
+            <h1 id="card-head">
+                Your To-Do List
+            </h1>
+            <!-- This is for adding task -->
+            <div id="card-new-task">
+                <form action="" method="post">
+                    <label for="" class="">New Task</label>
+                    <div id="input-wrap">
+                        <input type="text" name="task" id="task">
+                        <input class="add-task" type="submit" value="Add Task">
+                    </div>
+                </form>
+            </div>
+            <div id="card-curr-task">
+                <form action="" method="post">
+                    <label class="">Current Task(s)</label>
+                    <div id="input-wrap">
+                        <ul id='todo-task'>
+<!--                            <li class='item'>TASK 1 <a href="" class='item-remove'><i class="fas fa-times item-remove-icon"></i></a></li>-->
+                        </ul>
+                        <!-- <input id="curr-task-input" type="text" name="" id=""> -->
+                        <input id="curr-task-submit" type="submit" value="Clear Task">
+                    </div>
+                    
+                </form>
+            </div>
+            <div id="logout-section">
+                <div id="test">
+                <button class="btn" id="logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="lasndas" id="new" class="test test2"></a>
+    <script src="todo.js">
+
+    </script>
+</body>
+</html>
